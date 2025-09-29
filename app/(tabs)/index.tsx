@@ -70,7 +70,7 @@ export default function Index() {
         <>
        
 
-        <FlatList 
+        {/* <FlatList 
         horizontal
         showsHorizontalScrollIndicator={false}
         ItemSeparatorComponent={() => 
@@ -81,19 +81,51 @@ export default function Index() {
             <TrendingCard movie={item} index={index}/>
           )} 
           keyExtractor={(item) => item.movie_id.toString()}
-          />
+          /> */}
+          <FlatList 
+  horizontal
+  showsHorizontalScrollIndicator={false}
+  ItemSeparatorComponent={() => <View className="w-4"/>}
+  className="mb-4 mt-3" 
+  data={trendingMovies} 
+  renderItem={({item, index}) => (
+      <TrendingCard 
+        key={item.movie_id ?? index} 
+        movie={item} 
+        index={index} 
+      />
+    )} 
+  keyExtractor={(item, index) => (item.movie_id ?? index).toString()}
+/>
 
-<Text className="text-lg text-white
-        font-bold mt-5 mb-3">Latest Movies</Text>
 
-        <FlatList
+      <Text className="text-lg text-white
+              font-bold mt-5 mb-3">Latest Movies</Text>
+
+      <FlatList
+        data={movies}
+        renderItem={({item}) => (
+          <MovieCard key={item.id} {...item} />
+        )}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={3}
+        columnWrapperStyle={{
+          justifyContent:'flex-start',
+          gap: 20,
+          paddingRight: 5,
+          marginBottom: 10
+        }}
+        scrollEnabled={false}
+      />
+
+
+
+        {/* <FlatList
         data={movies}
         renderItem={({item}) => (
           <MovieCard 
           {...item}
           />
-          // <Text className="text-dark-200 text-sm">
-          //   {item.title}</Text>
         )}
         keyExtractor={(item) => item.id.toString()}
         numColumns={3}
@@ -105,7 +137,7 @@ export default function Index() {
         }}
         className="mt-2 pb-32"
         scrollEnabled={false}
-        />
+        /> */}
         </>
         </View>
         )}

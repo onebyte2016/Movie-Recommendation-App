@@ -8,7 +8,7 @@ interface TrendingCardProps {
     movie: {
       movie_id: number
       title: string
-      poster_url: string
+      poster_url?: string
     }
     index: number
   }

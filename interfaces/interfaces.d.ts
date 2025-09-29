@@ -20,7 +20,7 @@ interface TrendingMovie {
     movie_id: number;
     title:string;
     count: number;
-    poster_url: string;
+    poster_url?: string;
 }
 
 // interface MovieDetails {
@@ -121,3 +121,5 @@ export interface Genre {
     poster_url?: string;
   }
   
+
+ 
