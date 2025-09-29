@@ -55,33 +55,12 @@ export default function Index() {
           placeholder="Search for a movie"
           />
 
-        {/* <SearchBar
-          placeholder="Search for a movie"
-          onChangeText={(text) => console.log(text)}
-          value={search}
-          onFocus={() => router.push("/search")} // navigate when tapped
-        /> */}
-
           {trendingMovies && (
             <View className="mt-10">
               <Text className="text-lg text-white font-bold mb-3">Trending Movies</Text>
             </View>
           )}
         <>
-       
-
-        {/* <FlatList 
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        ItemSeparatorComponent={() => 
-        <View className="w-4"/>}
-        className="mb-4 mt-3" 
-        data={trendingMovies} 
-        renderItem={({item, index}) =>(
-            <TrendingCard movie={item} index={index}/>
-          )} 
-          keyExtractor={(item) => item.movie_id.toString()}
-          /> */}
           <FlatList 
   horizontal
   showsHorizontalScrollIndicator={false}
@@ -117,27 +96,6 @@ export default function Index() {
         }}
         scrollEnabled={false}
       />
-
-
-
-        {/* <FlatList
-        data={movies}
-        renderItem={({item}) => (
-          <MovieCard 
-          {...item}
-          />
-        )}
-        keyExtractor={(item) => item.id.toString()}
-        numColumns={3}
-        columnWrapperStyle = {{
-          justifyContent:'flex-start',
-          gap: 20,
-          paddingRight: 5,
-          marginBottom: 10
-        }}
-        className="mt-2 pb-32"
-        scrollEnabled={false}
-        /> */}
         </>
         </View>
         )}
